@@ -10,7 +10,7 @@ Group:		System/Libraries
 # check the SPDX tags in source files for details
 License:	BSD and MIT
 URL:		https://gitlab.freedesktop.org/slirp/%{name}
-Source0:	%{url}/-/archive/v%{version}/%{name}-%{version}.tar.bz2
+Source0:	%{url}/-/archive/v%{version}/%{name}-%{version}.tar.xz
 BuildRequires:  git-core
 BuildRequires:  meson
 BuildRequires:  glib2-devel
