@@ -1,16 +1,16 @@
 %define major 0
-%define libname %mklibname %{name} %{major}
+%define libname %mklibname %{name}
 %define devname %mklibname %{name} -d
 
 Name:		libslirp
-Version:	4.4.0
+Version:	4.7.0
 Release:	1
 Summary:	A general purpose TCP-IP emulator
 Group:		System/Libraries
 # check the SPDX tags in source files for details
 License:	BSD and MIT
 URL:		https://gitlab.freedesktop.org/slirp/%{name}
-Source0:	%{url}/-/archive/v%{version}/%{name}-%{version}.tar.xz
+Source0:	https://gitlab.freedesktop.org/slirp/libslirp/-/archive/v%{version}/libslirp-v%{version}.tar.bz2
 BuildRequires:  git-core
 BuildRequires:  meson
 BuildRequires:  glib2-devel
@@ -23,6 +23,7 @@ to provide virtual networking services.
 %package -n %{libname}
 Summary:	A general purpose TCP-IP emulator
 Group:		System/Libraries
+%rename %{mklibname %{name} %{major}}
 
 %description -n %{libname}
 A general purpose TCP-IP emulator used by virtual machine hypervisors
@@ -51,10 +52,10 @@ developing applications that use %{name}.
 #---------------------------------------------------------------------
 
 %prep
-%autosetup -S git_am
+%autosetup -S git_am -n %{name}-v%{version}
+%meson
 
 %build
-%meson
 %meson_build
 
 %install
