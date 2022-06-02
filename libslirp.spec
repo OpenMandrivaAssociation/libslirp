@@ -1,6 +1,6 @@
 %define major 0
-%define libname %mklibname %{name}
-%define devname %mklibname %{name} -d
+%define libname %mklibname slirp
+%define devname %mklibname slirp -d
 
 Name:		libslirp
 Version:	4.7.0
@@ -38,6 +38,7 @@ to provide virtual networking services.
 Summary:	Development files for %{name}
 Requires:	%{libname} = %{EVRD}
 Provides:	slirp-devel = %{EVRD}
+%rename %{mklibname %{name} -d}
 
 %description -n %{devname}
 The %{name}-devel package contains libraries and header files for
