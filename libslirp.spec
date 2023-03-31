@@ -4,7 +4,7 @@
 
 Name:		libslirp
 Version:	4.7.0
-Release:	1
+Release:	2
 Summary:	A general purpose TCP-IP emulator
 Group:		System/Libraries
 # check the SPDX tags in source files for details
