@@ -3,8 +3,8 @@
 %define devname %mklibname slirp -d
 
 Name:		libslirp
-Version:	4.7.0
-Release:	2
+Version:	4.8.0
+Release:	1
 Summary:	A general purpose TCP-IP emulator
 Group:		System/Libraries
 # check the SPDX tags in source files for details
